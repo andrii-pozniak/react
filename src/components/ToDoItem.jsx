@@ -16,7 +16,6 @@ const ToDoItem = ({ text, descriptions, id, setActive }) => {
                 <h4>DESCRIPTION</h4>
                 <span>{descriptions}</span>
             </div>
-
             <div>
                 <h4>STATUS</h4>
                 <input type={'checkbox'} />
