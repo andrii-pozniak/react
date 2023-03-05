@@ -6,7 +6,21 @@ const todoSlice = createSlice ({
         toDos: []
     },
     reducers: {
-
+        addToDo (state, action) {
+           
+            state.toDos.push({
+                id: new Date().toISOString(),
+                text: action.payload.text,
+                descriptions: action.payload.descriptions,
+                completed: false,  
+            })
+        },
+        removeToDos (state, action) {},
+        toggleToDoCompleted (state, action) {},
     }
 
-})
+});
+
+export const { addToDo, removeToDos, toggleToDoCompleted } = todoSlice.actions;
+
+export default todoSlice.reducer;
