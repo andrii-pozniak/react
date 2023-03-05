@@ -24,6 +24,10 @@ function App() {
     }
 
   };
+
+  const removeToDos = (toDoId) => {
+    setToDos(toDos.filter(toDo => toDo.id !== toDoId) )
+  }
  
   return (
     <div className="App">
@@ -31,18 +35,8 @@ function App() {
       <InputField text={text} descriptions={descriptions}
         handelSubmit={addToDo}
         handelText={setText} handelDescriptions={setDescriptions} />
-      <ToDoList toDos={toDos}  />
-      {/* <Modal  setActive={setShowModal} /> */}
-        {/* <div>
-        {text}
-          <h3>descriptions:{descriptions}</h3>
-          
-            
-          <h3>Status:</h3>
-        </div>
- */}
-
-      {/* </Modal> */}
+      <ToDoList toDos={toDos} removeToDos={removeToDos} />
+     
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 
 
-const ToDoItem = ({ text, descriptions, id }) => {
+const ToDoItem = ({ text, descriptions, id, removeToDos }) => {
     const [showModal, setShowModal] = useState(false);
     console.log("firs", {setShowModal})
 
@@ -28,6 +28,7 @@ const ToDoItem = ({ text, descriptions, id }) => {
                 <h4 className="text">STATUS</h4>
                 <input type={'checkbox'} />
             </div>
+            <button type="button" onClick={() => removeToDos(id)}>Delete</button>
             {showModal && <Modal  toggleModal={toggleModal}
            text={text} descriptions={descriptions} statusBox={ <input type={'checkbox'} />}/>}
         

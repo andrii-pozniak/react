@@ -9,10 +9,7 @@ label {
   justify-content: center;
   gap: 10px;
 }
-ul {
-  display: flex;
-  justify-content: center;
-}
+
 .text {
   text-decoration: none;
   margin: 0;
@@ -20,11 +17,12 @@ ul {
 }
 .li {
   display: grid;
-  justify-content: center;
- 
-  width: 50%;
-  grid-template-columns: 1fr 2fr 2fr 1fr;  
-  gap: 30px;
+  /* justify-content: center; */
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1fr;  
+  gap: 20px;
   padding: 5px;
   margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.4);
