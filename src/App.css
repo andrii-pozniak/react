@@ -9,9 +9,20 @@ label {
   justify-content: center;
   gap: 10px;
 }
+ul {
+  display: flex;
+  justify-content: center;
+}
+.text {
+  text-decoration: none;
+  margin: 0;
+  margin-bottom: 6px;
+}
 .li {
   display: grid;
   justify-content: center;
+ 
+  width: 50%;
   grid-template-columns: 1fr 2fr 2fr 1fr;  
   gap: 30px;
   padding: 5px;
