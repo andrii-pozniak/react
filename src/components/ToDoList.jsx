@@ -1,10 +1,10 @@
 import ToDoItem from "./ToDoItem";
 
-const ToDoIList = ({ toDos, setActive }) => {
+const ToDoIList = ({ toDos, setActive, active }) => {
     return (
         <ul className="ul">{
             toDos.map(toDo => <ToDoItem key={toDo.id}
-                setActive={setActive} {...toDo} />)
+                setActive={setActive} active={active} {...toDo} />)
         }
         </ul>
     )

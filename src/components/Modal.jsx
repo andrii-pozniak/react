@@ -1,14 +1,25 @@
 
 
-const Modal = ({active, setActive, children}) => {
+const Modal = ({ toggleModal,   text, descriptions, statusBox }) => {
+    // console.log("setActive", {setActive})
+    // console.log(first)
+
+   
+    
     return(
-      <div className={active?"modal active" : "modal"}>
+      <div  className="modal">
         <div className="modal__content">
-        {children}
+        <h3>{text}</h3>
+        
+        <h3>descriptions:</h3>
+        <p>{descriptions}</p>          
+          
+        <h3>Status:</h3>
+        {statusBox}
             <button className="btnModal" type="button"
-            onClick={() => setActive(false)}>Close</button>
+            onClick={toggleModal}>Close</button>
         </div>
-       
+      
       </div>  
     )
 }

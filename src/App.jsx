@@ -2,18 +2,17 @@ import './App.css';
 import { useState } from "react";
 import ToDoList from "./components/ToDoList";
 import InputField from "./components/InputField";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 
 function App() {
   const [toDos, setToDos] = useState([]);
   const [text, setText] = useState('');
   const [descriptions, setDescriptions] = useState('')
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const addToDo = () => {
     if (text.length && descriptions.length) {
-      setToDos([
-        ...toDos,
+      setToDos([...toDos,
         {
           id: new Date().toISOString(),
           text,
@@ -25,24 +24,25 @@ function App() {
     }
 
   };
-
+ 
   return (
     <div className="App">
 
       <InputField text={text} descriptions={descriptions}
         handelSubmit={addToDo}
         handelText={setText} handelDescriptions={setDescriptions} />
-      <ToDoList toDos={toDos} setActive={setShowModal} />
-      <Modal active={showModal} setActive={setShowModal}>
-        <div>
-          <h3>{text}</h3>
-          <h3>descriptions:</h3>
-          <p>{descriptions}</p>
+      <ToDoList toDos={toDos}  />
+      {/* <Modal  setActive={setShowModal} /> */}
+        {/* <div>
+        {text}
+          <h3>descriptions:{descriptions}</h3>
+          
+            
           <h3>Status:</h3>
         </div>
+ */}
 
-
-      </Modal>
+      {/* </Modal> */}
     </div>
   );
 }
