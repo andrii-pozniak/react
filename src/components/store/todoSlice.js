@@ -7,7 +7,9 @@ const todoSlice = createSlice ({
     },
     reducers: {
         addToDo (state, action) {
-           
+           if(action.payload.text === '' || action.payload.descriptions === '') {
+            return alert('This field is empty')
+           }
             state.toDos.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
