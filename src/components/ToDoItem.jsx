@@ -5,7 +5,6 @@ import { toggleToDoCompleted, removeToDos  } from "./store/todoSlice";
 
 
 const ToDoItem = ({ text, descriptions, id, completed }) => {
-    console.log("first", completed)
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
 

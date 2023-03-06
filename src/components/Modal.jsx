@@ -1,11 +1,7 @@
 
 
 const Modal = ({ toggleModal,   text, descriptions, statusBox }) => {
-    // console.log("setActive", {setActive})
-    // console.log(first)
-
    
-    
     return(
       <div  className="modal">
         <div className="modal__content">
