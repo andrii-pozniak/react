@@ -1,10 +1,13 @@
 import Modal from "./Modal";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleToDoCompleted, removeToDos  } from "./store/todoSlice";
 
 
-const ToDoItem = ({ text, descriptions, id, removeToDos, completed, toggleToDoCompleted }) => {
+const ToDoItem = ({ text, descriptions, id, completed }) => {
+    console.log("first", completed)
     const [showModal, setShowModal] = useState(false);
-    console.log("firs", {setShowModal})
+    const dispatch = useDispatch();
 
     const toggleModal = () =>{
         setShowModal(!showModal)
@@ -26,9 +29,9 @@ const ToDoItem = ({ text, descriptions, id, removeToDos, completed, toggleToDoCo
             </div>
             <div>
                 <h4 className="text">STATUS</h4>
-                <input type={'checkbox'} checked={completed} onChange={() => toggleToDoCompleted(id)} />
+                <input type={'checkbox'} checked={completed} onChange={() => dispatch(toggleToDoCompleted({id}))} />
             </div>
-            <button type="button" onClick={() => removeToDos(id)}>Delete</button>
+            <button type="button" onClick={() => dispatch(removeToDos({id}))}>Delete</button>
             {showModal && <Modal  toggleModal={toggleModal}
            text={text} descriptions={descriptions} statusBox={ <input type={'checkbox'} />}/>}
         

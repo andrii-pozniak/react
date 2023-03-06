@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import ToDoItem from "./ToDoItem";
 
-const ToDoIList = ({ setActive, active, removeToDos, toggleToDoCompleted }) => {
+const ToDoIList = ({ setActive, active}) => {
     const toDos = useSelector(state => state.toDos.toDos );
     console.log(toDos)
 
@@ -9,8 +9,8 @@ const ToDoIList = ({ setActive, active, removeToDos, toggleToDoCompleted }) => {
         <ul className="ul">{
             toDos.map(toDo => <ToDoItem key={toDo.id}
                 setActive={setActive} active={active} 
-                removeToDos={removeToDos} {...toDo} 
-                toggleToDoCompleted={toggleToDoCompleted}/>)
+                 {...toDo} 
+                />)
         }
         </ul>
     )

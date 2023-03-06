@@ -16,22 +16,7 @@ const addTask = () => {
   setText('');
   setDescriptions('')
 } 
-  
-
-  const removeToDos = (toDoId) => {
-    // setToDos(toDos.filter(toDo => toDo.id !== toDoId) )
-  }
-
-  const toggleToDoCompleted = (toDoId) => {
-    // setToDos(toDos.map(toDo => {
-    //   if(toDo.id !== toDoId) return toDo;
-    //   return {
-    //     ...toDo,
-    //     completed: !toDo.completed
-    //   }
-    // }))
-  }
- 
+    
   return (
     <div className="App">
 
